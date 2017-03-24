@@ -9,6 +9,7 @@ import {
   NavLink
 } from 'reactstrap';
 import { Link } from 'react-router';
+import localizedTexts from '../text_localization/LocalizedStrings';
 
 class NavBar extends Component {
   constructor(props) {
@@ -31,11 +32,14 @@ class NavBar extends Component {
     return (
       <Navbar light toggleable>
         <NavbarToggler right onClick={this.toggle} />
-        <NavbarBrand tag={Link} to="/">pivní suvenýry</NavbarBrand>
+        <NavbarBrand tag={Link} to="/">{localizedTexts.NavBar.pageName}</NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink tag={Link} to="/components/">Login</NavLink>
+              <NavLink tag={Link} to="/components/">{localizedTexts.NavBar.logIn}</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/components/">{localizedTexts.NavBar.signUp}</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
